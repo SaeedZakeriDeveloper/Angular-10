@@ -1,0 +1,21 @@
+<p *ngIf="isCorrect; else elsecond">ngIf true</p>
+<ng-template #elsecond>Else condition</ng-template>
+
+
+<!-- <ng-template [ngIf]="!isCorrect">
+  <p>ngIf true</p>
+</ng-template> -->
+
+
+<br><br>
+<button (click)="addNewUser()">Add New User</button>
+<p *ngFor="let user of usersObj; let i=index; trackBy: trackByFunc">{{ user.id + ": " + user.name }}</p>
+
+<div [ngSwitch]="switchProperty">
+  <app-switchcase1 *ngSwitchCase="'a'"></app-switchcase1>
+  <app-switchcase2 *ngSwitchCase="'b'"></app-switchcase2>
+  <app-switchcase3 *ngSwitchCase="'c'"></app-switchcase3>
+  <app-switchcase4 *ngSwitchCase="'d'"></app-switchcase4>
+</div>
+
+
