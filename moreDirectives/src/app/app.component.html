@@ -1,0 +1,9 @@
+<app-user [user]="user"></app-user> 
+
+<select (change)="onSelectChanges($event.target.value)">
+  <ng-container *ngFor="let user of users">
+    <ng-container *ngIf="user.age >= 30">
+      <option [ngValue]="user">{{ user.name }} ({{ user.age }})</option>
+    </ng-container>
+  </ng-container>
+</select>
