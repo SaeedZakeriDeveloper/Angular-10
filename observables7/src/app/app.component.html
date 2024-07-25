@@ -1,0 +1,29 @@
+<div class="navbar fixed-top" style="background-color: white; border-bottom: 1px solid #bdbdbd; padding: 2rem;">
+  <div style="width: 20%">
+    <label for="basic-url" class="form-label">Search Albums</label>
+    <div class="input-group mb-3">
+      <input #searchInput type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+    </div>
+  </div>
+</div>
+
+<div class="albums-container" style="margin-top: 8rem">
+  <div class="card" style="width: 18rem" *ngFor="let album of albums$ | async">
+    <!-- artistName -->
+    <div class="card-header">{{ album.artistName }}</div>
+    <!-- albumImage -->
+    <img [src]="album.imageUrl" class="card-img-top" alt="{{ album.imageUrl }}" />
+    <div class="card-body">
+      <!-- albumTitle -->
+      <h5 class="card-title">{{ album.title }}</h5>
+      <!-- albumDescription -->
+      <p class="card-text">{{ album.description }}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <!-- albumGenre -->
+      <li class="list-group-item">Genre: {{ album.genre }}</li>
+      <!-- albumNumSongs -->
+      <li class="list-group-item">Number of Songs: {{ album.numberOfSongs }}</li>
+    </ul>
+  </div>
+</div>
