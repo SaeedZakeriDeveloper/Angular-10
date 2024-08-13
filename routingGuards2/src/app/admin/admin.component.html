@@ -1,0 +1,32 @@
+<ul>
+  <li>
+    <a routerLink="manageusers">Manage Users</a>
+  </li>
+  <li>
+    <a routerLink="managepages">Manage Pages</a>
+  </li>
+</ul>
+
+<h1>You are in Admin section</h1>
+
+<div>
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input
+        #email
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input #password type="password" class="form-control" id="exampleInputPassword1" />
+    </div>
+    <button (click)="onUserLogin($event, email.value, password.value)">Submit</button>
+  </form>
+</div>
+
+<router-outlet></router-outlet>
