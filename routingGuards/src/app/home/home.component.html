@@ -1,0 +1,4 @@
+<h1>Welcome Home!</h1>
+
+<button *ngIf="!isLoggedIn" (click)="loginUser()">Login</button>
+<button *ngIf="isLoggedIn" (click)="logoutUser()">Logout</button>
