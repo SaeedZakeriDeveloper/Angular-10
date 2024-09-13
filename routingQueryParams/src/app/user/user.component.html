@@ -1,0 +1,15 @@
+<div *ngIf="!editMode">
+    <span>{{ user.id + ': ' }}</span>
+    <a 
+        [routerLink]="['./edit']"
+        [queryParams]="{editMode: '1', isAdmin: '1'}"
+        fragment="title1"
+        (click)="editMode = true"
+    >{{ user.name }}</a>
+    <span>{{ ' ---> Email: ' + user.email }}</span>
+    <button class="btn btn-primary" (click)="onEditUser()">Edit User</button>
+</div>
+
+<div *ngIf="editMode">
+    <router-outlet></router-outlet>
+</div>
